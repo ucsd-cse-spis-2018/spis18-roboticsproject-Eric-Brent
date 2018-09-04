@@ -23,17 +23,12 @@ if __name__ == '__main__':
     try:
         
         while True:
-            values = [0]*8
-            for i in range(8):
-                values[i] = mcp.read_adc(i)
-                if values[2] > 620:
-                    shake()
-                    values[2] = mcp.read_adc(2)
-                else:
-                    rest()
-                    print(values[2])
-
-            print(' | {0:>4} | {1:>4} | {2:>4} | {3:>4} | {4:>4} | {5:>4} | {6:>4} | {7:>4} |'.format(*values))
+            value = mcp.read_adc(2)
+            if value > 680:
+                shake()
+            else:
+                rest()
+                print(value)
             
             
     
