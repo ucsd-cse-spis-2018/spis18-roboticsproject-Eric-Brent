@@ -7,8 +7,6 @@ from servoMovement import *
 # GPIO Mode (BOARD / BCM)
 GPIO.setmode(GPIO.BCM)
 
-print("warming up")
-time.sleep(2)
 
 
 

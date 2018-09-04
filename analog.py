@@ -4,7 +4,7 @@ import Adafruit_GPIO.SPI as SPI
 import Adafruit_MCP3008
 from infrared import *
 from servoMovement import *
-from test import *
+from handshake import *
 
 # Software SPI
 # The library interface uses BCM labeling
@@ -26,9 +26,11 @@ if __name__ == '__main__':
             values = [0]*8
             for i in range(8):
                 values[i] = mcp.read_adc(i)
-                if values[2] > 750:
-                    test()
+                if values[2] > 620:
+                    shake()
+                    values[2] = mcp.read_adc(2)
                 else:
+                    rest()
                     print(values[2])
 
             print(' | {0:>4} | {1:>4} | {2:>4} | {3:>4} | {4:>4} | {5:>4} | {6:>4} | {7:>4} |'.format(*values))

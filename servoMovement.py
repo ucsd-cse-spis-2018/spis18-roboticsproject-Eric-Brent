@@ -24,12 +24,12 @@ def set_duty_cycle(angle):
 pwm_servo = GPIO.PWM(GPIO_Servo, pwm_frequency)
 
 def up():
-    angle = 120
+    angle = 140
     pwm_servo.start(set_duty_cycle(angle))
 
 
 def rest():
-    angle = 150
+    angle = 160
     pwm_servo.start(set_duty_cycle(angle))
 
 
