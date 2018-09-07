@@ -24,7 +24,7 @@ if __name__ == '__main__':
         
         while True:
             value = mcp.read_adc(2)
-            if value > 750:
+            if value > 720:
                 print(value)
                 shake()
             else:
