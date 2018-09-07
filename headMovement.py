@@ -25,40 +25,37 @@ def set_duty_cycle(angle):
 
     
 # Create a PWM instance
-pwm_servo = GPIO.PWM(GPIO_Servo, pwm_frequency)
+pwm_servo = GPIO.PWM(GPIO_Servo, pwm_frequency//2)
 
 # Set the angle cycle (between 0 and 180)
 angle = 90
-pwm_servo.start(set_duty_cycle(angle))
+#pwm_servo.start(set_duty_cycle(angle))
 
 def right():
-    angle = 180
-    pwm_servo.start(set_duty_cycle(angle))
-    print("right")
-def left():
     angle = 0
     pwm_servo.start(set_duty_cycle(angle))
-    print("left")
-def middle():
-    angle = 90
+    #print("right")
+def left():
+    angle = 20
     pwm_servo.start(set_duty_cycle(angle))
-    print("middle")
-    
+    #print("left")
+def middle():
+    pwm_servo.start(0)
+    #print("middle")
  
 # Main program 
-#if __name__ == '__main__':
-#    try:
-        
- #       print(np)
-            #angle = 0
-            #pwm_servo.start(set_duty_cycle(angle))
-            #print ("0")
-            #time.sleep(1)
+##if __name__ == '__main__':
+##    try:
+##        while True:
+##        print(np)
+##            middle()
+##            print ("0")
+##            time.sleep(1)
             
             
 
             
     # Reset by pressing CTRL + C
-  #  except KeyboardInterrupt:
- #       print("Program stopped by User")
-  #      GPIO.cleanup()
+##    except KeyboardInterrupt:
+##        print("Program stopped by User")
+##        GPIO.cleanup()

@@ -24,17 +24,17 @@ def set_duty_cycle(angle):
 pwm_servo = GPIO.PWM(GPIO_Servo, pwm_frequency)
 
 def up():
-    angle = 100
+    angle = 0
     pwm_servo.start(set_duty_cycle(angle))
 
 
 def rest():
-    angle = 140
+    angle = 40
     pwm_servo.start(set_duty_cycle(angle))
 
 
 def down():
-    angle = 180
+    angle = 80
     pwm_servo.start(set_duty_cycle(angle))
 
 def shake():
